@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Spam Detection</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <header>
+    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo" />
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>📬 contact me </h2>
+    <p>I'm happy to connect and help with anything related to this project or AI/ML in general.</p>
+    <section class="info-section">
+      <h3>👤 Name:</h3>
+      <p>Kanka Das</p>
+
+      <h3>📧 Email:</h3>
+      <p><a href="mailto:daskanka20@gmail.com">daskanka20@gmail.com</a></p>
+
+      <h3>📞 Phone:</h3>
+      <p>+91-9007150616/7003188150</p>
+
+      <h3>🌐 LinkedIn:</h3>
+      <p><a href="https://www.linkedin.com/in/kanka-das-a48295333" target="_blank">https://www.linkedin.com/in/kanka-das-a48295333</a></p>
+     
+      <h3>💻 GitHub:</h3>
+      <p><a href="https://github.com/kanka-317" target="_blank">https://github.com/kanka-317</a></p>
+
+      <h3>📝 Short Bio:</h3>
+      <p>
+        I’m a passionate Computer Science and Engineering student specializing in Artificial Intelligence and Machine Learning.
+        I love solving real-world problems using technology and have experience in Python, Django, Machine Learning, and Web Development.
+        This project is part of my journey toward mastering AI/ML, and I’m excited to keep learning and growing.
+      </p>
+      
+    </section>
+    <div class="btn-group">
+      <button id="darkModeToggle">🌙 Dark Mode</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Spam Detection System | Built with Django & ML</p>
+  </footer>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

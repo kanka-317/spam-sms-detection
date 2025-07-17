@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spam Email Detection System</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png" />
+</head>
+<body>
+  <header>
+    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo" />
+    <h1>Spam Email Detection</h1>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Protect Your Inbox with AI</h2>
+        <p>This intelligent system uses Machine Learning to detect whether an email is spam or not.</p>
+        <a href="#predictSection" class="cta-button">Try It Now</a>
+      </div>
+      <div class="hero-img">
+        <img src="{% static 'images/hero.png' %}" alt="Email Detection" />
+      </div>
+    </section>
+
+    <section id="predictSection">
+      <h2>🔍 Try Spam Detection</h2>
+      <form method="POST">
+        {% csrf_token %}
+        <textarea name="email_text" rows="8" placeholder="Type or paste your email here..." required>{{ email }}</textarea>
+
+        <div class="btn-group">
+          <button type="submit">Check for Spam</button>
+          <button type="button" id="clearText">Clear</button>
+          <button type="button" id="darkModeToggle">🌙 Dark Mode</button>
+        </div>
+        <p id="wordCount">Words: 0, Characters: 0</p>
+      </form>
+
+      {% if result %}
+      <div class="result">
+        <p>Prediction: <strong>{{ result }}</strong></p>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Spam Detection System | Portfolio ML Project</p>
+  </footer>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
